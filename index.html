@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerUI - Accessibility Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Define some test CSS variables here for the demo.
+           EmpowerUI will dynamically change these! */
+        :root {
+            --ui-color-primary: #006747;
+            /* Welsh Green */
+            --ui-color-secondary: #D92323;
+            /* Welsh Red */
+            --ui-color-accent: #5BCEFA;
+            /* Trans Blue */
+            --ui-color-text: #333333;
+            --ui-color-background: #F8F8F8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to EmpowerUI!</h1>
+            <p>Your beautiful accessibility toolkit.</p>
+            <button id="colorblindToggle" class="toggle-btn">Toggle Colorblind Mode</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="color-test-section">
+            <h2>Color Transformation Demo</h2>
+            <p>Watch how EmpowerUI dynamically adjusts the colors on this page to enhance visibility for Deuteranopia.
+                This is just the first step of making *anything* accessible!</p>
+            <button class="test-btn primary-btn">Primary Action</button>
+            <button class="test-btn secondary-btn">Secondary Action</button>
+            <div class="color-box primary-bg">Primary Element</div>
+            <div class="color-box secondary-bg">Secondary Element</div>
+            <div class="color-box accent-bg">Accent Element</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EmpowerUI. Crafted with love and sparkle! 💖</p>
+        </div>
+    </footer>
+
+    <script src="EmpowerUI.js"></script>
+</body>
+
+</html>
