@@ -1,56 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmpowerUI - Accessible UI Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/features/text-readability.css" />
+    <link rel="stylesheet" href="css/features/motion-reduction.css" />
+    <link rel="stylesheet" href="css/features/focus-highlight.css" />
+    <link rel="stylesheet" href="css/features/high-contrast.css" />
+    <script src="js/modules/ColorMode.js"></script>
+    <script src="js/modules/HighContrastMode.js"></script>
+    <script src="js/modules/TextReadabilityMode.js"></script>
+    <script src="js/modules/MotionMode.js"></script>
+    <script src="js/modules/FocusHighlightMode.js"></script>
+    <script src="js/EmpowerUI.js"></script>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmpowerUI - Accessibility Demo</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Define some test CSS variables here for the demo.
-           EmpowerUI will dynamically change these! */
-        :root {
-            --ui-color-primary: #006747;
-            /* Welsh Green */
-            --ui-color-secondary: #D92323;
-            /* Welsh Red */
-            --ui-color-accent: #5BCEFA;
-            /* Trans Blue */
-            --ui-color-text: #333333;
-            --ui-color-background: #F8F8F8;
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="container">
-            <h1>Welcome to EmpowerUI!</h1>
-            <p>Your beautiful accessibility toolkit.</p>
-            <button id="colorblindToggle" class="toggle-btn">Toggle Colorblind Mode</button>
+      <div class="container">
+        <h1>EmpowerUI</h1>
+        <p>Your customizable accessibility toolkit.</p>
+        <div class="controls-group">
+          <select id="colorModeType" class="mode-select">
+            <option value="none">Select Color Mode</option>
+            <option value="deuteranopia">Deuteranopia (Red-Green)</option>
+            <option value="protanopia">Protanopia (Red-Green)</option>
+            <option value="tritanopia">Tritanopia (Blue-Yellow)</option>
+            <option value="monochromacy">Monochromacy (Grayscale)</option>
+          </select>
+          <button id="colorModeToggle" class="toggle-btn">
+            Enable Color Mode
+          </button>
+
+          <button id="highContrastToggle" class="toggle-btn">
+            Enable High Contrast
+          </button>
+
+          <div class="text-size-controls">
+            <button id="decreaseText" class="text-btn">A-</button>
+            <button id="increaseText" class="text-btn">A+</button>
+            <button id="resetText" class="text-btn">Reset Text</button>
+          </div>
+
+          <button id="dyslexiaFontToggle" class="toggle-btn">
+            Enable Dyslexia Font
+          </button>
+
+          <div class="line-height-controls">
+            <button id="decreaseLineHeight" class="text-btn">Line -</button>
+            <button id="increaseLineHeight" class="text-btn">Line +</button>
+            <button id="resetLineHeight" class="text-btn">Line Reset</button>
+          </div>
+
+          <div class="letter-spacing-controls">
+            <button id="decreaseLetterSpacing" class="text-btn">
+              Letter -
+            </button>
+            <button id="increaseLetterSpacing" class="text-btn">
+              Letter +
+            </button>
+            <button id="resetLetterSpacing" class="text-btn">
+              Letter Reset
+            </button>
+          </div>
+
+          <button id="reduceMotionToggle" class="toggle-btn">
+            Reduce Motion
+          </button>
+
+          <button id="focusHighlightToggle" class="toggle-btn">
+            Highlight Toggle
+          </button>
         </div>
+      </div>
     </header>
 
     <main class="container">
-        <section class="color-test-section">
-            <h2>Color Transformation Demo</h2>
-            <p>Watch how EmpowerUI dynamically adjusts the colors on this page to enhance visibility for Deuteranopia.
-                This is just the first step of making *anything* accessible!</p>
-            <button class="test-btn primary-btn">Primary Action</button>
-            <button class="test-btn secondary-btn">Secondary Action</button>
-            <div class="color-box primary-bg">Primary Element</div>
-            <div class="color-box secondary-bg">Secondary Element</div>
-            <div class="color-box accent-bg">Accent Element</div>
-        </section>
+      <section class="color-test-section">
+        <h2>Color Mode Demo</h2>
+        <p>
+          This section demonstrates how the color adjustments affect various
+          elements. Buttons and colored boxes should change visually depending
+          on the selected color mode.
+        </p>
+        <div>
+          <button class="test-btn primary-btn">Primary Button</button>
+          <button class="test-btn secondary-btn">Secondary Button</button>
+          <button
+            class="test-btn accent-btn"
+            style="background-color: var(--ui-color-accent); color: white"
+          >
+            Accent Button
+          </button>
+        </div>
+        <div class="color-box primary-bg">Primary Background</div>
+        <div class="color-box secondary-bg">Secondary Background</div>
+        <div class="color-box accent-bg">Accent Background</div>
+      </section>
+
+      <section class="text-demo-section">
+        <h3>Text Readability Demo</h3>
+        <p>
+          This is a paragraph of text to demonstrate font size, font family,
+          line height, and letter spacing adjustments. This should help you
+          experience how text adapts to different readability settings. Focus on
+          how the words flow and how individual characters are spaced.
+        </p>
+        <ul>
+          <li>List item one with some text.</li>
+          <li>List item two demonstrating how spacing works.</li>
+          <li>Another list item.</li>
+        </ul>
+        <p>
+          The quick brown fox jumps over the lazy dog. This sentence contains
+          every letter of the alphabet, making it useful for font testing.
+        </p>
+      </section>
+
+      <section class="motion-demo-section">
+        <h3>Motion Reduction Demo</h3>
+        <p>
+          This section contains an element with an animation. When 'Reduce
+          Motion' is active, the animation should either stop or become very
+          brief, demonstrating the effect of the motion reduction feature.
+        </p>
+        <div class="animated-box">Animated Content</div>
+        <p>
+          This feature helps users who are sensitive to motion on webpages by
+          reducing or eliminating distracting animations and transitions.
+        </p>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 EmpowerUI. Crafted with love and sparkle! 💖</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 EmpowerUI. All rights reserved.</p>
+      </div>
     </footer>
-
-    <script src="EmpowerUI.js"></script>
-</body>
-
+  </body>
 </html>

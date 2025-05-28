@@ -1,0 +1,44 @@
+/* css/features/focus-highlight.css */
+
+/*
+   This class is added to the <html> element when Focus Highlight Mode is active.
+   All focus styles below will only apply when this class is present.
+*/
+.empowerui-focus-highlight-active *:focus-visible,
+.empowerui-focus-highlight-active a:focus-visible,
+.empowerui-focus-highlight-active button:focus-visible,
+.empowerui-focus-highlight-active input:focus-visible,
+.empowerui-focus-highlight-active select:focus-visible,
+.empowerui-focus-highlight-active textarea:focus-visible {
+    /* General highly visible outline */
+    outline: 4px solid var(--ui-color-accent) !important; /* Use accent color for high visibility */
+    outline-offset: 2px !important; /* Push outline slightly outside the element */
+    box-shadow: 0 0 0 4px var(--ui-color-accent), 0 0 0 8px rgba(var(--ui-color-accent-rgb), 0.3) !important; /* Add a glowing effect */
+    border-radius: 4px !important; /* Apply to rounded elements */
+}
+
+/* Optional: Additional styles for specific element types for even more emphasis */
+/* These rules are now redundant with the combined selector above, but harmless to keep. */
+
+.empowerui-focus-highlight-active a:focus-visible {
+    color: var(--ui-color-text) !important;
+    background-color: var(--ui-color-background) !important;
+    border-radius: 4px;
+}
+
+.empowerui-focus-highlight-active input:focus-visible,
+.empowerui-focus-highlight-active textarea:focus-visible,
+.empowerui-focus-highlight-active select:focus-visible {
+    border-color: var(--ui-color-accent) !important;
+}
+
+.empowerui-focus-highlight-active button:focus-visible {
+    background-color: var(--ui-color-primary) !important;
+    color: white !important;
+}
+
+/* Ensure that if elements have their own :focus styles, these override them */
+/* By default, we use :focus-visible for better user experience */
+.empowerui-focus-highlight-active :focus-visible {
+    transition: outline-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}

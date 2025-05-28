@@ -1,0 +1,221 @@
+/* IMPORTANT: DEFAULT CSS VARIABLES
+   These define the default look of your page BEFORE any accessibility
+   modes are activated by JavaScript. They are essential for initial load.
+*/
+:root {
+    --ui-color-primary: #007bff;
+    --ui-color-primary-rgb: 0, 123, 255;
+
+    --ui-color-secondary: #6c757d;
+    --ui-color-secondary-rgb: 108, 117, 125;
+
+    --ui-color-accent: #28a745;
+    --ui-color-accent-rgb: 40, 167, 69;
+
+    --ui-color-text: #343a40;
+    --ui-color-text-rgb: 52, 58, 64;
+
+    --ui-color-background: #f8f9fa;
+    --ui-color-background-rgb: 248, 249, 250;
+
+    --ui-base-font-size: 16px;
+    --ui-line-height: 1.6;
+    --ui-letter-spacing: 0em;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--ui-color-background);
+    color: var(--ui-color-text);
+    font-size: var(--ui-base-font-size);
+    line-height: var(--ui-line-height);
+    letter-spacing: var(--ui-letter-spacing);
+    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease, line-height 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--ui-color-primary);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.controls-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.toggle-btn,
+.mode-select {
+    background-color: var(--ui-color-accent);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-btn:hover,
+.mode-select:hover {
+    background-color: #4CAF50;
+}
+
+.toggle-btn.toggle-btn-active {
+    background-color: var(--ui-color-primary);
+    border: 2px solid white;
+    color: white;
+}
+
+.mode-select {
+    padding-right: 30px;
+}
+
+.text-size-controls,
+.line-height-controls,
+.letter-spacing-controls {
+    display: flex;
+    gap: 5px;
+    margin-left: 15px;
+}
+
+.text-btn {
+    background-color: var(--ui-color-accent);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.text-btn:hover {
+    background-color: #4CAF50;
+}
+
+main {
+    padding: 20px 0;
+}
+
+p,
+li {
+    padding: 5px 0;
+}
+
+.color-test-section,
+.text-demo-section,
+.motion-demo-section {
+    background-color: var(--ui-color-background);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--ui-color-primary);
+}
+
+.color-test-section h2,
+.text-demo-section h3,
+.motion-demo-section h3 {
+    color: var(--ui-color-primary);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.animated-box { /* Only core styling remains; animation properties are in motion-reduction.css */
+    background-color: var(--ui-color-accent);
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.test-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--ui-color-primary);
+    color: white;
+}
+
+.secondary-btn {
+    background-color: var(--ui-color-secondary);
+    color: white;
+}
+
+.accent-btn {
+    background-color: var(--ui-color-accent);
+    color: white;
+}
+
+.color-box {
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-bg {
+    background-color: var(--ui-color-primary);
+}
+
+.secondary-bg {
+    background-color: var(--ui-color-secondary);
+}
+
+.accent-bg {
+    background-color: var(--ui-color-accent);
+}
+
+footer {
+    background-color: var(--ui-color-primary);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}

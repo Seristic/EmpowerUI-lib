@@ -1,0 +1,30 @@
+/* css/features/motion-reduction.css */
+
+/* Basic animation for demonstration (to be reduced) */
+@keyframes slideAndFade {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(50px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated-box {
+    animation: slideAndFade 3s infinite alternate ease-in-out; /* The animation to be reduced */
+    transition: all 0.3s ease; /* Example of a transition that could be affected */
+}
+
+/* Motion Reduction Class - This is the core of the feature */
+.empowerui-reduced-motion-active * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important; /* Forces animations to play once */
+    scroll-behavior: auto !important; /* Disables smooth scrolling if used */
+}

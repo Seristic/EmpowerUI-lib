@@ -1,0 +1,32 @@
+/* css/features/high-contrast.css */
+
+/*
+   This class is added to the <html> element when High Contrast Mode is active.
+   It overrides the default CSS variables with high-contrast values.
+*/
+.empowerui-high-contrast-active {
+    /* Main color palette overrides */
+    --ui-color-primary: #FFFF00 !important; /* Bright yellow */
+    --ui-color-primary-rgb: 255, 255, 0 !important;
+
+    --ui-color-secondary: #CCCCCC !important; /* Light gray for secondary elements */
+    --ui-color-secondary-rgb: 204, 204, 204 !important;
+
+    --ui-color-accent: #00FF00 !important; /* Bright green */
+    --ui-color-accent-rgb: 0, 255, 0 !important;
+
+    --ui-color-text: #FFFFFF !important; /* White text */
+    --ui-color-text-rgb: 255, 255, 255 !important;
+
+    --ui-color-background: #000000 !important; /* Black background */
+    --ui-color-background-rgb: 0, 0, 0 !important;
+
+    /* Optional: Further adjustments */
+    filter: invert(100%) hue-rotate(180deg); /* This can create a general high contrast effect, but we're mostly relying on direct variable changes */
+    /* Remove the above filter if direct color mapping is preferred only */
+}
+
+/* Ensure smooth transitions are not overridden by !important */
+.empowerui-high-contrast-active {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

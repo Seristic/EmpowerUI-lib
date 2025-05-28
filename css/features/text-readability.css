@@ -1,0 +1,36 @@
+/* css/features/text-readability.css */
+
+/* OpenDyslexic Font Faces */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://unpkg.com/open-dyslexic@1.0.3/otf/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://unpkg.com/open-dyslexic@1.0.3/otf/OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://unpkg.com/open-dyslexic@1.0.3/otf/OpenDyslexic-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Rule to apply OpenDyslexic font when activated */
+.empowerui-dyslexia-font-active body,
+.empowerui-dyslexia-font-active p,
+.empowerui-dyslexia-font-active li,
+.empowerui-dyslexia-font-active h1,
+.empowerui-dyslexia-font-active h2,
+.empowerui-dyslexia-font-active h3,
+.empowerui-dyslexia-font-active h4,
+.empowerui-dyslexia-font-active h5,
+.empowerui-dyslexia-font-active h6 {
+    font-family: 'OpenDyslexic', Arial, sans-serif !important;
+}
